@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --primary-green: #2E4E3E;
+  --soft-beige: #F7F3EB;
+  --cream-white: #FBF8F3;
+  --warm-sand: #E8DCC0;
+  --blush-taupe: #D3BFA6;
+  --dark-text: #2A2A2A;
+  --muted-grey: #7A7A7A;
+}
+
+@theme inline {
+  --color-primary: var(--primary-green);
+  --color-background: var(--cream-white);
+  --color-secondary-bg: var(--soft-beige);
+  --color-accent: var(--warm-sand);
+  --color-highlight: var(--blush-taupe);
+  --color-text: var(--dark-text);
+  --color-text-secondary: var(--muted-grey);
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-roboto);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-family: var(--font-body);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-highlight);
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background-color: var(--color-highlight);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+}
