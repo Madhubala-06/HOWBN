@@ -52,7 +52,7 @@ export default function Programs() {
     {
       title: "Mindful Nutrition Coaching",
       features: [
-        "🥗 Customized Herbalife-based meal plans",
+        "🥗 Customized meal plans and supplements tailored to your current lifestyle.",
         "🌿 Gut health & lifestyle reset"
       ],
       icon: <span>🥗</span>,

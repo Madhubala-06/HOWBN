@@ -190,7 +190,7 @@ export default function Contact() {
 
           {/* Contact Info */}
           <div>
-            <div className="bg-primary-green text-white p-8 rounded-2xl mb-8">
+            <div className="bg-primary-green text-soft-beige p-8 rounded-2xl mb-8">
               <h3 className="font-heading text-2xl mb-6">Contact Information</h3>
               
               <div className="space-y-4">
@@ -206,7 +206,7 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span>Based in Bangalore & Mumbai</span>
+                  <span>Based in Mumbai</span>
                 </div>
                 
                 <div className="flex items-center">
@@ -232,7 +232,7 @@ export default function Contact() {
                 All programs can be conducted virtually, so you can transform from anywhere in the world!
               </p>
               <p className="text-dark-text">
-                In-person sessions are available in Bangalore and Mumbai.
+                In-person sessions are available in Mumbai.
               </p>
             </div>
           </div>
