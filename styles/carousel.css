@@ -1,0 +1,41 @@
+/* Custom carousel styles */
+.carousel-container .slick-dots {
+  bottom: -30px;
+}
+
+.carousel-container .slick-dots li button:before {
+  font-size: 10px;
+  color: #2E4E3E;
+  opacity: 0.5;
+}
+
+.carousel-container .slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #2E4E3E;
+}
+
+.carousel-container {
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+}
+
+.carousel-container .slick-slide {
+  padding: 5px;
+}
+
+/* Add a subtle glow effect to slides */
+.carousel-container .slick-slide > div > div {
+  transition: all 0.3s ease;
+}
+
+.carousel-container .slick-slide:hover > div > div {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(46, 78, 62, 0.3);
+  z-index: 10;
+  position: relative;
+}
+
+.carousel-container .slick-center > div > div {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(46, 78, 62, 0.2);
+}

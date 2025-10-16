@@ -1,3 +1,4 @@
+@import "https://rsms.me/inter/inter.css";
 @import "tailwindcss";
 
 :root {
@@ -20,6 +21,10 @@
   --color-text-secondary: var(--muted-grey);
   --font-heading: var(--font-playfair);
   --font-body: var(--font-roboto);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -86,4 +91,11 @@ h1, h2, h3, h4, h5, h6 {
   .section {
     padding: 3rem 0;
   }
+}
+
+
+.font-inter-display {
+	font-family:
+		"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+	font-feature-settings: "salt" on !important;
 }

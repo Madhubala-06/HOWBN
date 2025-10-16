@@ -1,0 +1,49 @@
+/* Blog styling */
+.blog-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.blog-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid #2E4E3E;
+  background-color: #F7F3EB;
+  font-style: italic;
+}
+
+.blog-content a {
+  color: #2E4E3E;
+  text-decoration: underline;
+}
+
+.blog-content ul, .blog-content ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 8px;
+}
+
+/* Blog card hover effects */
+.blog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(46, 78, 62, 0.1);
+}

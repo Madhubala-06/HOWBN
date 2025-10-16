@@ -4,6 +4,18 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// Custom scroll handler function
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  e.preventDefault();
+  const section = document.getElementById(sectionId);
+  if (section) {
+    window.scrollTo({
+      top: section.offsetTop - 80, // Adjust for header height
+      behavior: 'smooth'
+    });
+  }
+};
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,16 +37,16 @@ export default function Header() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed font-inter-display top-0 left-0 w-full z-50 transition-all duration-300 font-inter-display ${
         isScrolled 
           ? 'bg-white shadow-md py-2' 
           : 'bg-transparent py-4'
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex  justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="relative w-12 h-12 mr-3">
+          <div className="relative w-12 h-12 ">
             <Image 
                src="/images/Logo-2.png" 
               alt="House of Wellness by N Logo" 
@@ -42,9 +54,8 @@ export default function Header() {
               className="object-contain" 
             />
           </div>
-          <span className="text-primary-green text-xl font-semibold font-heading">
-            House of Wellness
-            <span className="text-sm block -mt-1">by N</span>
+          <span className="text-dark-text  font-inter-display text-lg font-semibold font-heading">
+            House of Wellness by N
           </span>
         </Link>
 
@@ -53,21 +64,47 @@ export default function Header() {
           <Link href="/" className="text-dark-text hover:text-primary-green transition-colors">
             Home
           </Link>
-          <Link href="#about" className="text-dark-text hover:text-primary-green transition-colors">
+          <a 
+            href="#about" 
+            className="text-dark-text hover:text-primary-green transition-colors cursor-pointer"
+            onClick={(e) => scrollToSection(e, 'about')}
+          >
             About
-          </Link>
-          <Link href="#programs" className="text-dark-text hover:text-primary-green transition-colors">
+          </a>
+          <a 
+            href="#programs" 
+            className="text-dark-text hover:text-primary-green transition-colors cursor-pointer"
+            onClick={(e) => scrollToSection(e, 'programs')}
+          >
             Programs
-          </Link>
-          <Link href="#transformations" className="text-dark-text hover:text-primary-green transition-colors">
+          </a>
+          <a 
+            href="#transformations" 
+            className="text-dark-text hover:text-primary-green transition-colors cursor-pointer"
+            onClick={(e) => scrollToSection(e, 'transformations')}
+          >
             Transformations
-          </Link>
-          <Link href="#testimonials" className="text-dark-text hover:text-primary-green transition-colors">
+          </a>
+          <a 
+            href="#testimonials" 
+            className="text-dark-text hover:text-primary-green transition-colors cursor-pointer"
+            onClick={(e) => scrollToSection(e, 'testimonials')}
+          >
             Testimonials
+          </a>
+          <Link 
+            href="/blog" 
+            className="text-dark-text hover:text-primary-green transition-colors"
+          >
+            Blog
           </Link>
-          <Link href="#contact" className="btn btn-primary">
+          <a 
+            href="#contact" 
+            className="btn btn-primary cursor-pointer"
+            onClick={(e) => scrollToSection(e, 'contact')}
+          >
             Join Now
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -98,41 +135,63 @@ export default function Header() {
             >
               Home
             </Link>
-            <Link 
+            <a 
               href="#about" 
               className="text-dark-text hover:text-primary-green transition-colors px-4 py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                scrollToSection(e, 'about');
+                setIsMobileMenuOpen(false);
+              }}
             >
               About
-            </Link>
-            <Link 
+            </a>
+            <a 
               href="#programs" 
               className="text-dark-text hover:text-primary-green transition-colors px-4 py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                scrollToSection(e, 'programs');
+                setIsMobileMenuOpen(false);
+              }}
             >
               Programs
-            </Link>
-            <Link 
+            </a>
+            <a 
               href="#transformations" 
               className="text-dark-text hover:text-primary-green transition-colors px-4 py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                scrollToSection(e, 'transformations');
+                setIsMobileMenuOpen(false);
+              }}
             >
               Transformations
-            </Link>
-            <Link 
+            </a>
+            <a 
               href="#testimonials" 
+              className="text-dark-text hover:text-primary-green transition-colors px-4 py-2"
+              onClick={(e) => {
+                scrollToSection(e, 'testimonials');
+                setIsMobileMenuOpen(false);
+              }}
+            >
+              Testimonials
+            </a>
+            <Link 
+              href="/blog" 
               className="text-dark-text hover:text-primary-green transition-colors px-4 py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Testimonials
+              Blog
             </Link>
-            <Link 
+            <a 
               href="#contact" 
               className="btn btn-primary mx-4"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                scrollToSection(e, 'contact');
+                setIsMobileMenuOpen(false);
+              }}
             >
               Join Now
-            </Link>
+            </a>
           </div>
         </div>
       )}

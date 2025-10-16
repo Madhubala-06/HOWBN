@@ -1,17 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 type TestimonialProps = {
   quote: string;
   name: string;
   location: string;
-  image?: string;
   isActive: boolean;
 }
 
-function Testimonial({ quote, name, location, image, isActive }: TestimonialProps) {
+function Testimonial({ quote, name, location, isActive }: TestimonialProps) {
   return (
     <div 
       className={`bg-white p-8 rounded-2xl shadow-md transition-all duration-500 ${
@@ -32,11 +30,12 @@ function Testimonial({ quote, name, location, image, isActive }: TestimonialProp
       
       {/* Client Info */}
       <div className="flex items-center">
-        {image && (
-          <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-primary-green/20 flex items-center justify-center">
-            <span className="text-primary-green text-xs">Photo</span>
-          </div>
-        )}
+        <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-primary-green/10 flex items-center justify-center text-primary-green">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
         <div>
           <p className="font-semibold text-primary-green">{name}</p>
           <p className="text-muted-grey text-sm">{location}</p>
@@ -48,33 +47,55 @@ function Testimonial({ quote, name, location, image, isActive }: TestimonialProp
 
 export default function Testimonials() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  
+  const goToPrevious = () => {
+    setActiveTestimonial(prev => 
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
+  };
+  
+  const goToNext = () => {
+    setActiveTestimonial(prev => 
+      (prev + 1) % testimonials.length
+    );
+  };
 
   const testimonials = [
     {
-      quote: "I joined Nageshwari's 30-day program thinking I'd just lose weight — but I found discipline, energy, and happiness. She truly cares about your journey.",
-      name: "Aishwarya",
-      location: "Mumbai",
-      image: "/images/testimonial-1.jpg"
+      quote: "I've always loved fitness, but after an injury, I gained weight and lost motivation. Joining Nageshwari's 30-Day Challenge helped me lose 10 kgs, rebuild my confidence, and fall in love with fitness again. Her coaching is truly a complete lifestyle transformation!",
+      name: "Apoorva Parab",
+      location: "Mumbai"
     },
     {
-      quote: "The yoga sessions helped me reconnect with my body. I've never felt so light and confident.",
-      name: "Sneha",
-      location: "Bangalore",
-      image: "/images/testimonial-2.jpg"
+      quote: "Nageshwari and I were childhood friends, but after moving to different city, we lost touch. Postpartum, I reached out to her for help and, with her guidance, I lost 6 kgs and feel healthy, fit, and confident again!",
+      name: "Shraddha Gaikwad",
+      location: "Ahmedabad"
     },
     {
-      quote: "Following the nutrition plan was easier than I expected. The meals were delicious, and I never felt deprived. I've lost 12kg and gained so much energy!",
-      name: "Rahul",
-      location: "Delhi",
-      image: "/images/testimonial-3.jpg"
+      quote: "During the lockdown, I had lost a lot of weight due to COVID. I joined Nageshwari's program to gain weight with the right nutrition and supplements. With her guidance, I've regained 8 kgs and feel healthier and stronger than ever!",
+      name: "Varsha Nair",
+      location: "Trivandrum"
     },
     {
-      quote: "As a busy mom of two, finding time for fitness seemed impossible. The customized home workout plan fit perfectly into my schedule. I've transformed both physically and mentally.",
-      name: "Priya",
-      location: "Hyderabad",
-      image: "/images/testimonial-4.jpg"
+      quote: "I joined Nageshwari's 21-day program at 64, and with her customized workouts and nutrition plans, I feel young, energetic, and strong again!",
+      name: "Meena Iyer",
+      location: "Mumbai"
     }
   ];
+
+  // Toggle navigation visibility on small screens
+  const [showNavigation, setShowNavigation] = useState(true);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setShowNavigation(window.innerWidth > 640);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Auto-rotate testimonials
   useEffect(() => {
@@ -86,7 +107,7 @@ export default function Testimonials() {
   }, [testimonials.length]);
 
   return (
-    <section id="testimonials" className="py-20 bg-warm-sand/30">
+    <section id="testimonials" className="py-28 bg-warm-sand/30">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-heading font-semibold text-primary-green mb-4">
@@ -95,7 +116,18 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials Carousel */}
-        <div className="max-w-3xl mx-auto relative h-[300px]">
+        <div className="max-w-3xl mx-auto relative h-[340px] px-8 sm:px-0">
+          {/* Previous Button */}
+          <button 
+            onClick={goToPrevious}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 md:-translate-x-16 w-10 h-10 rounded-full bg-white shadow-md z-10 flex items-center justify-center text-primary-green hover:bg-soft-beige hover:text-primary-green transition-colors focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-offset-2"
+            aria-label="Previous testimonial"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          
           <div className="relative h-full">
             {testimonials.map((testimonial, index) => (
               <div
@@ -109,21 +141,37 @@ export default function Testimonials() {
               </div>
             ))}
           </div>
+          
+          {/* Next Button */}
+          <button 
+            onClick={goToNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 md:translate-x-16 w-10 h-10 rounded-full bg-white shadow-md z-10 flex items-center justify-center text-primary-green hover:bg-soft-beige hover:text-primary-green transition-colors focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-offset-2"
+            aria-label="Next testimonial"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
 
           {/* Navigation Dots */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-12 space-x-3">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   index === activeTestimonial 
-                    ? 'bg-primary-green' 
-                    : 'bg-warm-sand'
+                    ? ' bg-green-950/50 scale-110 shadow-md' 
+                    : 'bg-green-950'
                 }`}
                 aria-label={`View testimonial ${index + 1}`}
               />
             ))}
+          </div>
+          
+          {/* Text indicator */}
+          <div className="text-center mt-4 text-muted-grey text-sm">
+            <p>{activeTestimonial + 1} of {testimonials.length} stories</p>
           </div>
         </div>
       </div>
