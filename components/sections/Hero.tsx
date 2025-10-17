@@ -66,7 +66,7 @@ export default function Hero() {
         <div className="text-center md:max-w-full mx-auto mb-6    md:mt-[10%] " style={{fontFamily: 'Unbounded, sans-serif'}}>
           <h2 className="text-3xl md:text-6xl lg:text-6xl leading-tight mb-4 font-unbounded">
             <span className="text-dark-text">Transforming Lives Through Wellness, </span>
-            <span className="text-primary-green italic">  & Mindfulness Living</span>
+            <span className="text-primary-green italic">  & Mindfull Living</span>
           </h2>
         </div>
         <div className="pb-12 text-center text-muted-grey ">
