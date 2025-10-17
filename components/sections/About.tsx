@@ -29,9 +29,8 @@ export default function About() {
           {/* About Content */}
           <div>
             <div className="flex items-center mb-6">
-              <hr className="w-12 border-warm-sand mr-4" />
               <h2 className="text-3xl md:text-4xl font-heading font-semibold text-primary-green">
-                🌸 About Me
+                About Me
               </h2>
             </div>
             
@@ -46,17 +45,17 @@ export default function About() {
                 lifestyle — one that transformed not just my body but also my confidence and mindset.
               </p>
               <p>
-                Today, as a Wellness Coach with expertise in Yoga (200-hour Certified Teacher) 
-                and Nutrition Essentials from the American Society for Nutrition (ASN), 
+                Today, as a Wellness Coach and certified yoga teacher with expertise in 
+                 Nutrition Essentials from the American Society for Nutrition (ASN), 
                 I help individuals discover balance and confidence through personalized coaching 
                 that blends movement, mindfulness, and sustainable nutrition.
               </p>
               <p className="font-semibold text-primary-green">
-                💚 My mission is simple — to help you feel empowered, balanced, and confident 
+                My mission is simple — to help you feel empowered, balanced, and confident 
                 in your own skin.
               </p>
               <p className="font-semibold">
-                🌿 Your journey to wellness starts here — let's transform together.
+               Your journey to wellness starts here — let's transform together.
               </p>
             </div>
             

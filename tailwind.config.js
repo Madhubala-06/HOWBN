@@ -20,6 +20,7 @@ module.exports = {
         'body': ['var(--font-roboto)', 'sans-serif'],
         'figtree': ['var(--font-figtree)', 'sans-serif'],
         'unbounded': ['var(--font-unbounded)', 'sans-serif'],
+        'berkshire': ['var(--font-berkshire)', 'cursive'],
         'inter': ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       boxShadow: {

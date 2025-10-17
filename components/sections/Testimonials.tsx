@@ -12,10 +12,10 @@ type TestimonialProps = {
 function Testimonial({ quote, name, location, isActive }: TestimonialProps) {
   return (
     <div 
-      className={`bg-white p-8 rounded-2xl shadow-md transition-all duration-500 ${
+      className={`bg-white p-6 sm:p-8 rounded-2xl shadow-md transition-all duration-500 ${
         isActive 
           ? 'opacity-100 scale-100' 
-          : 'opacity-0 scale-95 absolute'
+          : 'opacity-0 scale-95 hidden'
       }`}
     >
       {/* Quote Icon */}
@@ -26,7 +26,7 @@ function Testimonial({ quote, name, location, isActive }: TestimonialProps) {
       </div>
 
       {/* Testimonial Content */}
-      <p className="text-dark-text italic mb-6">"{quote}"</p>
+      <p className="text-dark-text italic mb-6 text-sm sm:text-base">"{quote}"</p>
       
       {/* Client Info */}
       <div className="flex items-center">
@@ -80,11 +80,16 @@ export default function Testimonials() {
       quote: "I joined Nageshwari's 21-day program at 64, and with her customized workouts and nutrition plans, I feel young, energetic, and strong again!",
       name: "Meena Iyer",
       location: "Mumbai"
+    },
+    {
+      quote: "I had thyroid for more than a decade, and losing weight always felt impossible. When I had almost given up on the idea of getting fit, I met Nageshwari. Her guidance, simple workout routines tailored to my schedule, and practical lifestyle changes helped me lose 12 kgs in just 3 months. I’m truly grateful for her support and motivation.",
+      name: "Swapna Shetty",
+      location: "Mumbai"
     }
   ];
 
   // Toggle navigation visibility on small screens
-  const [showNavigation, setShowNavigation] = useState(true);
+  const [_showNavigation, setShowNavigation] = useState(true);
   
   useEffect(() => {
     const handleResize = () => {
@@ -97,14 +102,6 @@ export default function Testimonials() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Auto-rotate testimonials
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTestimonial(prev => (prev + 1) % testimonials.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
 
   return (
     <section id="testimonials" className="py-28 bg-warm-sand/30">
@@ -116,11 +113,11 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials Carousel */}
-        <div className="max-w-3xl mx-auto relative h-[340px] px-8 sm:px-0">
+        <div className="max-w-3xl mx-auto relative h-auto px-10 sm:px-0">
           {/* Previous Button */}
           <button 
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 md:-translate-x-16 w-10 h-10 rounded-full bg-white shadow-md z-10 flex items-center justify-center text-primary-green hover:bg-soft-beige hover:text-primary-green transition-colors focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-offset-2"
+            className="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 sm:-translate-x-6 md:-translate-x-16 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-md z-10 flex items-center justify-center text-primary-green hover:bg-soft-beige hover:text-primary-green transition-colors focus:outline-none focus:ring-none focus:ring-transparent focus:ring-offset-"
             aria-label="Previous testimonial"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -128,7 +125,7 @@ export default function Testimonials() {
             </svg>
           </button>
           
-          <div className="relative h-full">
+          <div className="relative h-full mx-1 sm:mx-0">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
@@ -145,7 +142,7 @@ export default function Testimonials() {
           {/* Next Button */}
           <button 
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 md:translate-x-16 w-10 h-10 rounded-full bg-white shadow-md z-10 flex items-center justify-center text-primary-green hover:bg-soft-beige hover:text-primary-green transition-colors focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-offset-2"
+            className="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 sm:translate-x-6 md:translate-x-16 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-md z-10 flex items-center justify-center text-primary-green hover:bg-soft-beige hover:text-primary-green transition-colors focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-offset-2"
             aria-label="Next testimonial"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -154,7 +151,7 @@ export default function Testimonials() {
           </button>
 
           {/* Navigation Dots */}
-          <div className="flex justify-center mt-12 space-x-3">
+          <div className=" justify-center mt-12 space-x-3 hidden sm:flex">
             {testimonials.map((_, index) => (
               <button
                 key={index}
@@ -170,8 +167,13 @@ export default function Testimonials() {
           </div>
           
           {/* Text indicator */}
-          <div className="text-center mt-4 text-muted-grey text-sm">
+          <div className="text-center mt-4 text-muted-grey text-sm hidden sm:block">
             <p>{activeTestimonial + 1} of {testimonials.length} stories</p>
+          </div>
+
+          {/* Mobile indicators */}
+          <div className="text-center mt-4 flex justify-center items-center sm:hidden">
+            <p className="text-xs text-muted-grey">{activeTestimonial + 1}/{testimonials.length}</p>
           </div>
         </div>
       </div>

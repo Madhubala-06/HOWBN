@@ -10,6 +10,8 @@ const blogPosts = [
     id: 1,
     title: "N's Wellness Diary – My Journey from Obese Teen to Wellness Coach",
     date: "October 16, 2025",
+    thumbnailContent: "N's Wellness Diary – Transformation, Balance , Confidence",
+
     slug: "journey-from-obese-teen-to-wellness-coach",
     thumbnail: "/blog/one_thumbnail.png",
     content: `
@@ -31,6 +33,8 @@ const blogPosts = [
     title: "Start Small, Stay Consistent: My Guide to Begin Your Wellness Journey",
     date: "October 18, 2025",
     slug: "start-small-stay-consistent",
+    thumbnailContent: "My Guide to begin your wellness journey",
+
     thumbnail: "/blog/two_thumbnail.png",
     content: `
       <p>"After I shared my own transformation, one question I get all the time is — 'Where do I start?'
@@ -38,10 +42,10 @@ const blogPosts = [
 
       <p>I know how overwhelming it can feel when you decide to make a change. You might scroll through fitness videos, diets, and challenges, wondering what's right for you. But the truth is — you don't need to do everything at once. Wellness begins with one simple step, taken with intention.</p>
 
-      <p>Here's how you can begin your journey today 🌿</p>
+      <p>Here's how you can begin your journey today </p>
 
 
-      <h2 class="text-2xl font-bold text-primary-green mb-3">1️⃣ Start with a Simple Morning Routine</h2>
+      <h2 class="text-2xl font-bold text-primary-green mb-3">1. Start with a Simple Morning Routine</h2>
 
       <p>The first thing you do after waking up sets the tone for your entire day.
       Begin by hydrating — have a glass of water or warm lemon water. 
@@ -50,7 +54,7 @@ const blogPosts = [
       <p>If you're like me, a healthy breakfast makes all the difference. I personally start my day with a Herbalife shake, which keeps me full, energized, and ready to move.</p>
 
 
-      <h2 class="text-2xl font-bold text-primary-green mb-3">2️⃣ Focus on Nutrition, Not Restriction</h2>
+      <h2 class="text-2xl font-bold text-primary-green mb-3">2. Focus on Nutrition, Not Restriction</h2>
 
       <p>Forget fad diets and complicated meal plans.
       Wellness is about nourishing your body, not punishing it.
@@ -59,7 +63,7 @@ const blogPosts = [
 
       <div class=""></div>
 
-      <h2 class="text-2xl font-bold text-primary-green mb-3">3️⃣ Move Every Day</h2>
+      <h2 class="text-2xl font-bold text-primary-green mb-3">3. Move Every Day</h2>
 
       <p>Movement is medicine.
       Whether it's Yoga, Zumba, or HIIT, find an activity that makes you happy.
@@ -67,7 +71,7 @@ const blogPosts = [
 
       <div class=""></div>
 
-      <h2 class="text-2xl font-bold text-primary-green mb-3">4️⃣ Prioritize Rest & Hydration</h2>
+      <h2 class="text-2xl font-bold text-primary-green mb-3">4. Prioritize Rest & Hydration</h2>
 
       <p>Your body needs recovery as much as effort.
       Aim for 7–8 hours of sleep, and keep your hydration levels up through the day.
@@ -75,7 +79,7 @@ const blogPosts = [
 
       <div class=""></div>
 
-      <h2 class="text-2xl font-bold text-primary-green mb-3">5️⃣ Stay Consistent & Kind to Yourself</h2>
+      <h2 class="text-2xl font-bold text-primary-green mb-3">5. Stay Consistent & Kind to Yourself</h2>
 
       <p>The real secret to transformation isn't speed — it's consistency.
       There will be days you feel motivated, and others when you don't — and that's okay.
@@ -87,7 +91,7 @@ const blogPosts = [
       It's about doing something mindfully, every single day."</p>
 
       <p>If you're just starting out, I hope these steps help you take that first leap.
-      Remember, I've been exactly where you are — and if I can do it, so can you. 🌿</p>
+      Remember, I've been exactly where you are — and if I can do it, so can you. </p>
 
       <p>Follow @houseofwellnessbyn for more daily tips, motivation, and real stories of transformation.</p>
     `,
@@ -98,8 +102,9 @@ const blogPosts = [
     date: "October 20, 2025",
     slug: "improve-gut-health-naturally",
     thumbnail: "/blog/three_thumbnail.png", 
+    thumbnailContent: "Happy Gut,Happy You",
     content: `
-      <p class="text-xl text-primary-green font-semibold">🌱 Introduction</p>
+      <p class="text-xl text-primary-green font-semibold">Introduction</p>
 
       <p>Your gut does so much more than just digest food — it affects your mood, energy, immunity, and even your skin.
       When your gut is happy, everything else falls into place — better digestion, clearer skin, lighter mood, and more energy through the day.</p>
@@ -108,7 +113,7 @@ const blogPosts = [
 
       <div class="my-6"></div>
 
-      <h2 class="text-2xl font-bold text-primary-green mb-3">🥛 1. Add Fermented Foods to Your Meals</h2>
+      <h2 class="text-2xl font-bold text-primary-green mb-3">1. Add Fermented Foods to Your Meals</h2>
 
       <p>Fermented foods are your gut's best friends! They're full of probiotics — those "good" bacteria that help with digestion and reduce bloating.
       Try including curd, buttermilk, homemade pickles, or fermented batters like dosa and idli.
@@ -116,15 +121,15 @@ const blogPosts = [
 
       <div class="my-6"></div>
 
-      <h2 class="text-2xl font-bold text-primary-green mb-3">🥗 2. Fill Your Plate with Fiber</h2>
+      <h2 class="text-2xl font-bold text-primary-green mb-3">2. Fill Your Plate with Fiber</h2>
 
       <p>Fiber keeps your digestion smooth and feeds your healthy gut bacteria.
       Think of colorful fruits, veggies, oats, whole grains, and lentils — your gut thrives on variety.
-      A simple rule? The more natural colors on your plate, the happier your gut will be! 🌈</p>
+      A simple rule? The more natural colors on your plate, the happier your gut will be!</p>
 
       <div class="my-6"></div>
 
-      <h2 class="text-2xl font-bold text-primary-green mb-3">🧘‍♀️ 3. Manage Stress (Your Gut Feels It Too!)</h2>
+      <h2 class="text-2xl font-bold text-primary-green mb-3">3. Manage Stress (Your Gut Feels It Too!)</h2>
 
       <p>It's true — your gut and your mind talk to each other constantly.
       When you're stressed, your digestion slows down. That's why calming your mind helps your gut, too.
@@ -133,7 +138,7 @@ const blogPosts = [
 
       <div class="my-6"></div>
 
-      <h2 class="text-2xl font-bold text-primary-green mb-3">🚶‍♀️ 4. Move a Little Every Day</h2>
+      <h2 class="text-2xl font-bold text-primary-green mb-3">4. Move a Little Every Day</h2>
 
       <p>Movement is magic for your gut! You don't need to hit the gym or do anything extreme.
       A 30-minute walk, yoga session, Zumba class, or even light stretching can keep your digestion active and your metabolism balanced.
@@ -141,7 +146,7 @@ const blogPosts = [
 
       <div class="my-6"></div>
 
-      <h2 class="text-2xl font-bold text-primary-green mb-3">💊 5. Include Natural Prebiotics</h2>
+      <h2 class="text-2xl font-bold text-primary-green mb-3">5. Include Natural Prebiotics</h2>
 
       <p>Prebiotics act like food for your good gut bacteria — helping them grow and thrive.
       You'll find them naturally in garlic, onions, bananas, and oats.
@@ -150,15 +155,23 @@ const blogPosts = [
 
       <div class="my-6"></div>
 
-      <p class="text-xl text-primary-green font-semibold">🌸 Final Note</p>
+      <p class="text-xl text-primary-green font-semibold">Final Note</p>
 
       <p>Caring for your gut is one of the best things you can do for your overall wellness.
       Start small — eat real food, move daily, and make time to relax.
       You'll start feeling lighter, more energized, and more in tune with your body.</p>
 
-      <p class="text-xl font-semibold mt-6">✨ Don't just read about a healthy gut — experience it.
-      Join my 14-Day Gut Health Challenge and give your body the fresh start it deserves!
-      💫 Tap below to get started — your gut will thank you!</p>
+      <p class="text-xl font-semibold mt-6">Don't just read about a healthy gut — experience it.
+      Join my 14-Day Gut Health Challenge and give your body the fresh start it deserves!</p>
+      
+<button class="!mt-8 !flex !justify-center !items-center !w-full">
+       <a 
+         href="/#contact" 
+         class="!px-10 !py-3 !text-xl !font-normal  btn-primary !flex !items-center !gap-2 !transition-all !hover:-translate-y-1 !shadow-md !hover:shadow-lg !cursor-pointer !rounded-xl !no-underline !text-center "
+       >
+         Start Your Wellness Journey Today
+       </a>
+     </button>
     `,
   },
 ];
@@ -182,7 +195,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <div className="mb-6">
             <Link 
               href="/blog" 
-              className="text-primary-green hover:underline inline-flex items-center"
+              className="  inline-flex items-center"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -192,13 +205,35 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </div>
 
           <article className="bg-white rounded-xl shadow-card overflow-hidden">
-            <div className="relative h-80 w-full  ">
-              <Image
-                src={post.thumbnail}
-                alt={post.title}
-                fill
-                className="object-contain  bg-[#F7F3EB]"
-              />
+            <div className="relative h-60 md:h-80 w-full bg-[#F7F3EB] my-auto items-center justify-center flex overflow-hidden">
+              {/* Decorative Elements - Hidden on mobile */}
+              <div className="absolute top-0 left-0 w-32 h-32 bg-warm-sand/20 rounded-full -translate-x-16 -translate-y-16 z-0 hidden md:block"></div>
+              <div className="absolute bottom-0 right-24 w-16 h-16 bg-primary-green/10 rounded-full translate-y-6 z-0 hidden md:block"></div>
+              
+              {/* Left Side - Dynamic Text */}
+              <div className="w-full md:w-3/5 p-4 md:p-8 flex flex-col justify-center relative z-10 ">
+                {/* Eyebrow text */}
+              
+                <h2 className="text-2xl sm:text-3xl md:text-6xl  text-primary-green mb-2 md:mb-4 leading-tight tracking-wide" style={{fontFamily: 'Berkshire Swash, sans-serif'}}>
+                 {post.thumbnailContent}
+                </h2>
+                
+               
+              </div>
+              
+              {/* Right Side - Coach Image */}
+              <div className="w-1/2 md:w-2/5 h-40  md:h-full relative  self-end ">
+                {/* Diagonal gradient overlay */}
+                <div className="absolute bg-gradient-to-tr self-end  from-[#F7F3EB] via-transparent to-transparent z-10 opacity-40"></div>
+                
+                <Image
+                  src="/blog/owner.png"
+                  alt="Wellness Coach"
+                  fill
+                  className="object-cover object-top md:object-center self-end "
+                  priority
+                />
+              </div>
             </div>
             
             <div className="p-6 md:p-10">

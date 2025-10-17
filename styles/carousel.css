@@ -29,13 +29,25 @@
 }
 
 .carousel-container .slick-slide:hover > div > div {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(46, 78, 62, 0.3);
   z-index: 10;
   position: relative;
 }
 
 .carousel-container .slick-center > div > div {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(46, 78, 62, 0.2);
+  position: relative;
+}
+
+/* Mobile carousel specific styles */
+.mobile-carousel {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.mobile-carousel .slick-dots {
+  bottom: -25px;
+}
+
+.mobile-carousel .slick-track {
+  display: flex;
+  align-items: center;
 }
