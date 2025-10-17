@@ -40,9 +40,9 @@ export default function Programs() {
     {
       title: "30-Day Transformation Program",
       features: [
-        "✅ HIIT + Yoga + Zumba combo",
-        "✅ Personalized nutrition guidance",
-        "✅ Progress tracking & weekly check-ins"
+        " HIIT + Yoga + Zumba combo",
+        "Personalized nutrition guidance",
+        " Progress tracking & weekly check-ins"
       ],
       icon: <span>🧩</span>,
       ctaText: "Join the Next Batch",
@@ -52,8 +52,8 @@ export default function Programs() {
     {
       title: "Mindful Nutrition Coaching",
       features: [
-        "🥗 Customized meal plans and supplements tailored to your current lifestyle.",
-        "🌿 Gut health & lifestyle reset"
+        " Customized meal plans and supplements tailored to your current lifestyle.",
+        " Gut health & lifestyle reset"
       ],
       icon: <span>🥗</span>,
       ctaText: "Get My Plan",
@@ -63,8 +63,8 @@ export default function Programs() {
     {
       title: "1:1 Wellness Coaching",
       features: [
-        "💬 Personalized mentoring",
-        "💚 Habit-building, motivation & accountability"
+        "Personalized mentoring",
+        "Habit-building, motivation & accountability"
       ],
       icon: <span>💬</span>,
       ctaText: "Book a Free Consultation",
@@ -79,7 +79,7 @@ export default function Programs() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-heading font-semibold text-primary-green mb-4">
-            💪 Transform with Me
+            Transform with N
           </h2>
           <p className="text-lg text-dark-text">
             Every individual's journey is unique — find the program that fits your lifestyle and pace.

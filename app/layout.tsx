@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Roboto, Figtree, Unbounded } from "next/font/google";
+import { Playfair_Display, Roboto, Figtree, Unbounded, Berkshire_Swash } from "next/font/google";
 import "./globals.css";
 import "../styles/blog.css";
 
@@ -26,6 +26,12 @@ const unbounded = Unbounded({
   weight: ["400", "500", "700"],
 });
 
+const berkshireSwash = Berkshire_Swash({
+  variable: "--font-berkshire",
+  weight: ["400"],
+  subsets: ["latin"],
+});
+
 
 export const metadata: Metadata = {
   title: "House of Wellness by N",
@@ -40,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${playfairDisplay.variable} ${roboto.variable} ${figtree.variable} ${unbounded.variable} font-inter-display antialiased`}
+        className={` ${playfairDisplay.variable} ${roboto.variable} ${figtree.variable} ${unbounded.variable} ${berkshireSwash.variable} font-inter-display antialiased`}
       >
         {children}
       </body>

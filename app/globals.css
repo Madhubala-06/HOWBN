@@ -63,12 +63,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary {
   background-color: var(--color-primary);
-  color: white;
+  color: white !important;
 }
 
 .btn-primary:hover {
   background-color: var(--color-highlight);
-  color: var(--color-primary);
+  color: var(--color-primary) !important;
   transform: translateY(-3px);
 }
 

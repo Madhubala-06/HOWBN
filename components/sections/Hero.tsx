@@ -70,7 +70,7 @@ export default function Hero() {
           </h2>
         </div>
         <div className="pb-12 text-center text-muted-grey ">
-          <p>💫 7+ years of experience | 200+ transformations and counting</p>
+          <p>7+ years of experience | 200+ transformations and counting</p>
         </div>
         {/* Program Badges */}
         <div className="flex flex-wrap justify-center md:gap-3 gap-1 mb-10 ">
