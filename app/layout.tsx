@@ -34,6 +34,7 @@ const berkshireSwash = Berkshire_Swash({
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://houseofwellnessbyn.com"),
   title: "House of Wellness by N | Wellness, Fitness & Nutrition",
   description: "Transform your life with personalized wellness programs, HIIT workouts, yoga classes, and mindful nutrition plans. Join House of Wellness by N to achieve sustainable health and fitness goals.",
   keywords: ["wellness", "fitness", "nutrition", "yoga", "HIIT", "health coaching", "personal training", "mindfulness"],
@@ -45,13 +46,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://houseofwellnessbyn.com",
+    url: "/",
     siteName: "House of Wellness by N",
     title: "House of Wellness by N | Transform Your Life",
     description: "Premium wellness, fitness, and nutrition programs customized to your needs and goals.",
     images: [
       {
-        url: "https://houseofwellnessbyn.com/images/logo.png",
+        url: "/images/logo.png",
         width: 1200,
         height: 630,
         alt: "House of Wellness by N",
@@ -62,10 +63,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "House of Wellness by N | Wellness, Fitness & Nutrition",
     description: "Transform your life with personalized wellness programs, HIIT workouts, yoga classes, and mindful nutrition plans.",
-    images: ["https://houseofwellnessbyn.com/images/logo.png"],
+    images: ["/images/logo.png"],
   },
   alternates: {
-    canonical: "https://houseofwellnessbyn.com",
+    canonical: "/",
   },
   verification: {
     google: "google-site-verification-code", // Replace with your actual verification code when you have it

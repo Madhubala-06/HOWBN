@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 // Base metadata configuration
 const baseMetadata = {
+  metadataBase: new URL("https://houseofwellnessbyn.com"),
   title: {
     template: "%s | House of Wellness by N",
     default: "House of Wellness by N | Wellness, Fitness & Nutrition"
@@ -29,7 +30,7 @@ export const homeMetadata: Metadata = {
   openGraph: {
     title: "House of Wellness by N | Transform Your Life Through Wellness",
     description: "Experience personalized wellness programs, HIIT workouts, nutrition coaching, and holistic health transformation.",
-    url: "https://houseofwellnessbyn.com",
+    url: "/",
     siteName: "House of Wellness by N",
     images: [
       {
@@ -53,7 +54,7 @@ export const blogMetadata: Metadata = {
   openGraph: {
     title: "Wellness Blog | House of Wellness by N",
     description: "Expert insights, practical tips and inspiring stories to support your wellness journey.",
-    url: "https://houseofwellnessbyn.com/blog",
+    url: "/blog",
     siteName: "House of Wellness by N",
     images: [
       {

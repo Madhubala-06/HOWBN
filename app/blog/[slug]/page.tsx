@@ -197,6 +197,7 @@ export async function generateMetadata(
   const description = contentWithoutTags.substring(0, 160).trim() + '...';
   
   return {
+    metadataBase: new URL("https://houseofwellnessbyn.com"),
     title: post.title + ' | House of Wellness by N',
     description: description,
     openGraph: {
@@ -204,7 +205,7 @@ export async function generateMetadata(
       description: description,
       type: 'article',
       publishedTime: post.date,
-      url: `https://houseofwellnessbyn.com/blog/${post.slug}`,
+      url: `/blog/${post.slug}`,
       images: [
         {
           url: post.thumbnail || '/blog/owner.png',
@@ -221,7 +222,7 @@ export async function generateMetadata(
       images: [post.thumbnail || '/blog/owner.png'],
     },
     alternates: {
-      canonical: `https://houseofwellnessbyn.com/blog/${post.slug}`,
+      canonical: `/blog/${post.slug}`,
     },
   };
 }
