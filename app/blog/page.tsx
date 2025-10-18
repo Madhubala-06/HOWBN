@@ -2,6 +2,9 @@ import Header from "../../components/layout/Header";
 import Footer from "../../components/layout/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import { blogMetadata } from "../metadata";
+
+export const metadata = blogMetadata;
 
 // Mock data for blog posts
 const blogPosts = [

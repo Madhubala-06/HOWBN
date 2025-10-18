@@ -6,6 +6,9 @@ import Programs from "../components/sections/Programs";
 import Transformations from "../components/sections/Transformations";
 import Testimonials from "../components/sections/Testimonials";
 import Contact from "../components/sections/Contact";
+import { homeMetadata } from "./metadata";
+
+export const metadata = homeMetadata;
 
 export default function Home() {
   return (

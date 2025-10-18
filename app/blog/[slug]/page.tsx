@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "../../../components/layout/Header";
 import Footer from "../../../components/layout/Footer";
+import { Metadata } from "next";
 
 // Mock blog posts data - in a real app, this would come from a CMS or database
 const blogPosts = [
@@ -178,6 +179,51 @@ const blogPosts = [
 
 function getBlogPost(slug: string) {
   return blogPosts.find((post) => post.slug === slug);
+}
+
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+): Promise<Metadata> {
+  const post = getBlogPost(params.slug);
+  
+  if (!post) {
+    return {
+      title: 'Blog Post Not Found',
+    };
+  }
+
+  // Extract the first paragraph of content as a description (without HTML tags)
+  const contentWithoutTags = post.content.replace(/<[^>]*>/g, ' ');
+  const description = contentWithoutTags.substring(0, 160).trim() + '...';
+  
+  return {
+    title: post.title + ' | House of Wellness by N',
+    description: description,
+    openGraph: {
+      title: post.title,
+      description: description,
+      type: 'article',
+      publishedTime: post.date,
+      url: `https://houseofwellnessbyn.com/blog/${post.slug}`,
+      images: [
+        {
+          url: post.thumbnail || '/blog/owner.png',
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: description,
+      images: [post.thumbnail || '/blog/owner.png'],
+    },
+    alternates: {
+      canonical: `https://houseofwellnessbyn.com/blog/${post.slug}`,
+    },
+  };
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
