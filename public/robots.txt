@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://houseofwellnessbyn.com
+
+# Sitemaps
+Sitemap: https://houseofwellnessbyn.com/sitemap.xml
