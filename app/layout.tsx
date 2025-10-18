@@ -40,12 +40,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    googleBot: "index, follow, max-image-preview:large, max-snippet:-1",
   },
   openGraph: {
     type: "website",
@@ -90,36 +85,40 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "HealthAndBeautyBusiness",
+              "@type": "WebSite",
               "name": "House of Wellness by N",
-              "image": "https://houseofwellnessbyn.com/images/logo.png",
               "url": "https://houseofwellnessbyn.com",
               "description": "Transform your life with personalized wellness programs, HIIT workouts, yoga classes, and mindful nutrition plans.",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Toronto", // Update with correct location
-                "addressRegion": "ON", // Update with correct region
-                "addressCountry": "CA" // Update with correct country
-              },
-              "priceRange": "$$", // Update based on your pricing
-              "telephone": "+1-XXX-XXX-XXXX", // Update with your contact number
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://houseofwellnessbyn.com/blog?search={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "N",
+              "url": "https://houseofwellnessbyn.com/#about",
+              "image": "https://houseofwellnessbyn.com/images/N-2.jpeg",
+              "description": "Wellness Coach and certified yoga teacher with expertise in Nutrition Essentials from the American Society for Nutrition (ASN).",
+              "jobTitle": "Wellness Coach",
               "sameAs": [
                 "https://www.instagram.com/houseofwellnessbyn/", // Replace with actual social profiles
                 "https://www.facebook.com/houseofwellnessbyn/"
               ],
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  "opens": "09:00",
-                  "closes": "18:00"
-                }
-              ],
-              "offers": {
-                "@type": "Offer",
-                "description": "Wellness and fitness programs",
-                "availability": "https://schema.org/InStock"
-              }
+              "worksFor": {
+                "@type": "Organization",
+                "name": "House of Wellness by N",
+                "url": "https://houseofwellnessbyn.com"
+              },
+              "knowsAbout": ["fitness", "wellness", "yoga", "nutrition", "HIIT", "healthy lifestyle"]
             })
           }}
         />

@@ -24,10 +24,15 @@ export default function PageSEO({
     "Transform your life with personalized wellness programs, HIIT workouts, yoga classes, and mindful nutrition plans.";
   const siteUrl = "https://houseofwellnessbyn.com";
   
+  // For section-based navigation (fragments)
+  const isSection = canonicalPath?.startsWith('#');
+  
   // Construct canonical URL
-  const canonical = canonicalPath 
-    ? `${siteUrl}${canonicalPath}` 
-    : `${siteUrl}${router.asPath.split("?")[0]}`;
+  const canonical = isSection 
+    ? `${siteUrl}/${canonicalPath}` 
+    : canonicalPath 
+      ? `${siteUrl}${canonicalPath}` 
+      : `${siteUrl}${router.asPath.split("?")[0]}`;
 
   return (
     <Head>

@@ -32,9 +32,6 @@ module.exports = {
     '/': 1.0,
     '/blog': 0.8,
     '/blog/*': 0.7,
-    '/programs': 0.9,
-    '/about': 0.6,
-    '/contact': 0.6,
   },
   transform: async (config, path) => {
     // Custom priority for specific pages

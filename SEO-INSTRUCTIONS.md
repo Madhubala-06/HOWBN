@@ -1,5 +1,7 @@
 # Google Search Engine Optimization Guide for House of Wellness BYN
 
+**Note: This guide has been updated to reflect your site's structure with sections on the homepage rather than separate pages.**
+
 This guide will help you complete the setup for Google Search Console and improve your website's visibility in search results.
 
 ## What's Been Implemented
